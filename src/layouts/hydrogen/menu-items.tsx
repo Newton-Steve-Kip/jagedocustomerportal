@@ -67,6 +67,48 @@ export const menuItems = [
   },
 
   {
+    name: 'Admin',
+    href: routes.admin.dashboard,
+    icon: <PiBriefcaseDuotone />,
+    dropdownItems: [
+      {
+        name: 'Customer register',
+        href: routes.admin.customer,
+        badge: '',
+      },
+      {
+        name: 'Individual register',
+        href: routes.admin.individual,
+        badge: '',
+      },
+      {
+        name: 'Service provider register',
+        href: routes.admin.serviceProvider,
+        badge: '',
+      },
+      {
+        name: ' Organization register',
+        href: routes.admin.organization,
+        badge: '',
+      },
+      {
+        name: 'Requisitions',
+        href: routes.admin.requisitions,
+        badge: '',
+      },
+      {
+        name: 'Assign Service Provider',
+        href: routes.admin.assignServiceProvider,
+        badge: '',
+      },
+      {
+        name: 'Submit to Service Providers',
+        href: routes.admin.addToServiceProviders,
+        badge: '',
+      },
+    ],
+  },
+  {
     name: 'E-Commerce',
     href: routes.eCommerce.dashboard,
     icon: <PiShoppingCartDuotone />,
@@ -395,24 +437,8 @@ export const menuItems = [
     icon: <PiLockKeyDuotone />,
     dropdownItems: [
       {
-        name: 'Modern Forgot password',
-        href: routes.auth.forgotPassword1,
-      },
-      {
-        name: 'Vintage Forgot password',
-        href: routes.auth.forgotPassword2,
-      },
-      {
-        name: 'Trendy Forgot password',
-        href: routes.auth.forgotPassword3,
-      },
-      {
         name: 'Elegant Forgot password',
         href: routes.auth.forgotPassword4,
-      },
-      {
-        name: 'Classic Forgot password',
-        href: routes.auth.forgotPassword5,
       },
     ],
   },
@@ -422,24 +448,8 @@ export const menuItems = [
     icon: <PiChatCenteredDotsDuotone />,
     dropdownItems: [
       {
-        name: 'Modern OTP page',
-        href: routes.auth.otp1,
-      },
-      {
-        name: 'Vintage OTP page',
-        href: routes.auth.otp2,
-      },
-      {
-        name: 'Trendy OTP page',
-        href: routes.auth.otp3,
-      },
-      {
         name: 'Elegant OTP page',
         href: routes.auth.otp4,
-      },
-      {
-        name: 'Classic OTP page',
-        href: routes.auth.otp5,
       },
     ],
   },

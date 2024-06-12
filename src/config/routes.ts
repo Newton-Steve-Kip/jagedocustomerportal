@@ -1,4 +1,19 @@
 export const routes = {
+  admin: {
+    dashboard: '/admin',
+    registers: '/admin/registers',
+    customer: '/admin/registers/customer',
+    individual: '/admin/registers/individual',
+    organization: '/admin/registers/organization',
+    serviceProvider: '/admin/registers/service-provider',
+    requisitions: '/admin/requisitions',
+    assignServiceProvider: '/admin/service-providers/assign-service-provider',
+    addToServiceProviders: '/admin/addToServiceProviders',
+    quotations: '/admin/quotations',
+    analyzeQuotations: '/admin/quotations/analyzeQuotations',
+    evaluate: '/admin/quotations/evaluateQuotations',
+  },
+
   eCommerce: {
     dashboard: '/ecommerce',
     products: '/ecommerce/products',
@@ -115,11 +130,7 @@ export const routes = {
   maintenance: '/maintenance',
   blank: '/blank',
   auth: {
-    signUp1: '/auth/sign-up-1',
-    signUp2: '/auth/sign-up-2',
-    signUp3: '/auth/sign-up-3',
     signUp4: '/auth/sign-up-4',
-    signUp5: '/auth/sign-up-5',
     // sign in
     signIn1: '/auth/sign-in-1',
     signIn2: '/auth/sign-in-2',
