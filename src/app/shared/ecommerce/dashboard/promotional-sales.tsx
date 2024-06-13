@@ -14,37 +14,38 @@ import { useMedia } from '@/hooks/use-media';
 
 const data = [
   {
-    name: 'Youtube',
-    sales: 31.47,
+    name: 'Requisitions',
+    sales: 30,
     fill: '#FF0000',
   },
   {
-    name: 'Instagram',
-    sales: 26.69,
+    name: 'Quotations',
+    sales: 26,
     fill: '#E1306C',
   },
   {
-    name: 'Twitter',
-    sales: 15.69,
+    name: 'Active',
+    sales: 11,
     fill: '#1DA1F2',
   },
   {
-    name: 'Facebook',
-    sales: 8.22,
+    name: 'Completed',
+    sales: 21,
     fill: '#4267B2',
+  },
+  {
+    name: 'Reviews',
+    sales: 8,
+    fill: '#9D67B2',
   },
 ];
 
-export default function PromotionalSales({
-  className,
-}: {
-  className?: string;
-}) {
+export default function JobsWidget({ className }: { className?: string }) {
   const isMobile = useMedia('(max-width: 480px)', false);
   const [startDate, setStartDate] = useState<Date>(new Date());
   return (
     <WidgetCard
-      title={'Promotional Sales'}
+      title={'Jobs'}
       action={
         <DatePicker
           selected={startDate}

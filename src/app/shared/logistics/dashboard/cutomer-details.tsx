@@ -14,6 +14,7 @@ import TrendingUpIcon from '@/components/icons/trending-up';
 import TrendingDownIcon from '@/components/icons/trending-down';
 import UserColorIcon from '@/components/icons/user-color';
 import UserDetails from '@/components/cards/user-details';
+import SquareBoxIcon from '@/components/icons/square-box';
 
 const statData = [
   {
@@ -38,7 +39,6 @@ const statData = [
   },
   {
     id: '3',
-    icon: <SalesIcon className="h-9 w-9" />,
     graphIcon: <TrendingUpIcon className="me-1 h-4 w-4" />,
     graphColor: 'text-green',
     title: 'Gender',
@@ -49,7 +49,6 @@ const statData = [
   {
     id: '4',
     title: 'ID number ',
-    icon: <ContainersIcon className="h-7 w-7" />,
     graphIcon: <TrendingUpIcon className="me-1 h-4 w-4" />,
     graphColor: 'text-green',
     name: '34345344',
@@ -115,7 +114,7 @@ export default function CustomerDetailsCard({
               iconClassName={cn('@5xl:w-20 @5xl:h-20 h-16 w-16')}
               chartClassName="hidden @[200px]:flex @[200px]:items-center h-14 w-24"
             >
-              <Text className="mt-5 flex items-center leading-none text-gray-500">
+              {/* <Text className="mt-5 flex items-center leading-none text-gray-500">
                 <Text
                   as="span"
                   className={cn(
@@ -130,7 +129,7 @@ export default function CustomerDetailsCard({
                   {stat.increased ? 'Increased' : 'Decreased'}
                 </Text>{' '}
                 last month
-              </Text>
+              </Text> */}
             </UserDetails>
           ))}
         </div>

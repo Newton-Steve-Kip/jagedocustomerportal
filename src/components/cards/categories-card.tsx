@@ -28,7 +28,7 @@ type MetricCardTypes = {
   className?: string;
 };
 
-export default function MetricCard({
+export default function CategoriesCard({
   title,
   metric,
   icon,

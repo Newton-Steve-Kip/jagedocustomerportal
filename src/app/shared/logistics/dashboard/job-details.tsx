@@ -20,9 +20,39 @@ const statData = [
     id: '1',
     title: 'Job Description',
     icon: '',
-    graphIcon: <TrendingUpIcon className="me-1 h-4 w-4" />,
+    // graphIcon: <TrendingUpIcon className="me-1 h-4 w-4" />,
     graphColor: 'text-red',
     name: 'busted pipe',
+    increased: false,
+    percentage: '+4.40',
+  },
+  {
+    id: '2',
+    title: 'Job Number',
+    icon: '',
+    graphIcon: <TrendingUpIcon className="me-1 h-4 w-4" />,
+    graphColor: 'text-red',
+    name: '#A01283DHS',
+    increased: false,
+    percentage: '+4.40',
+  },
+  {
+    id: '3',
+    title: 'Job Specifications',
+    icon: '',
+    graphIcon: <TrendingUpIcon className="me-1 h-4 w-4" />,
+    graphColor: 'text-red',
+    name: 'Skilled fundi',
+    increased: false,
+    percentage: '+4.40',
+  },
+  {
+    id: '4',
+    title: 'Location',
+    icon: '',
+    graphIcon: <TrendingUpIcon className="me-1 h-4 w-4" />,
+    graphColor: 'text-red',
+    name: 'Kome,Homabay',
     increased: false,
     percentage: '+4.40',
   },
@@ -72,7 +102,7 @@ export default function JobDetailsCard({ className }: { className?: string }) {
               iconClassName={cn('@5xl:w-20 @5xl:h-20 h-16 w-16')}
               chartClassName="hidden @[200px]:flex @[200px]:items-center h-14 w-24"
             >
-              <Text className="mt-5 flex items-center leading-none text-gray-500">
+              {/* <Text className="mt-5 flex items-center leading-none text-gray-500">
                 <Text
                   as="span"
                   className={cn(
@@ -87,7 +117,7 @@ export default function JobDetailsCard({ className }: { className?: string }) {
                   {stat.increased ? 'Increased' : 'Decreased'}
                 </Text>{' '}
                 last month
-              </Text>
+              </Text> */}
             </UserDetails>
           ))}
         </div>

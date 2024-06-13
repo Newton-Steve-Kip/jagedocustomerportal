@@ -13,12 +13,12 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { CustomTooltip } from '@/components/charts/custom-tooltip';
-import { chartData, widgetData } from '@/data/card-widgets-data';
+import { chartData, systemSummary } from '@/data/card-widgets-data';
 
 export default function BarChartList({ className }: { className?: string }) {
   return (
     <>
-      {widgetData.map((item) => (
+      {systemSummary.map((item) => (
         <WidgetCard
           key={item.name}
           title={item.name}

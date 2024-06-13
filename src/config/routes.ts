@@ -1,14 +1,16 @@
 export const routes = {
   admin: {
     dashboard: '/admin',
+    profile: '/admin/profile',
+    addToServiceProviders: '/admin/add-to-service-providers',
+    profileCreation: '/admin/profile/profile-creation',
     registers: '/admin/registers',
     customer: '/admin/registers/customer',
     individual: '/admin/registers/individual',
     organization: '/admin/registers/organization',
     serviceProvider: '/admin/registers/service-provider',
-    requisitions: '/admin/requisitions',
+    requisitions: '/admin/registers/requisitions',
     assignServiceProvider: '/admin/service-providers/assign-service-provider',
-    addToServiceProviders: '/admin/addToServiceProviders',
     quotations: '/admin/quotations',
     analyzeQuotations: '/admin/quotations/analyzeQuotations',
     evaluate: '/admin/quotations/evaluateQuotations',

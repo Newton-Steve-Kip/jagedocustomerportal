@@ -27,7 +27,7 @@ const QuillEditor = dynamic(() => import('@/components/ui/quill-editor'), {
   ssr: false,
 });
 
-export default function CustomTextArea({ className }: { className?: string }) {
+export default function CustomTextArea2({ className }: { className?: string }) {
   const onSubmit: SubmitHandler<PersonalInfoFormTypes> = (data) => {
     toast.success(<Text as="b">Successfully added!</Text>);
     console.log('Profile settings data ->', {
@@ -60,7 +60,7 @@ export default function CustomTextArea({ className }: { className?: string }) {
                 className="pt-2 @2xl:pt-4 @3xl:grid-cols-12 @3xl:pt-1"
               />
 
-              <div className="mb-10 grid gap-7 divide-y divide-dashed divide-gray-200 @2xl:gap-9 @3xl:gap-11">
+              {/* <div className="mb-10 grid gap-7 divide-y divide-dashed divide-gray-200 @2xl:gap-9 @3xl:gap-11">
                 <FormGroup
                   title="Notes"
                   className="pt-7 @2xl:pt-9 @3xl:grid-cols-12 @3xl:pt-11"
@@ -78,7 +78,7 @@ export default function CustomTextArea({ className }: { className?: string }) {
                     )}
                   />
                 </FormGroup>
-              </div>
+              </div> */}
 
               <FormFooter
                 // isLoading={isLoading}
