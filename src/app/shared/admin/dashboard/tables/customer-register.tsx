@@ -5,6 +5,7 @@ import BasicTableWidget from '@/components/controlled-table/basic-table-widget';
 export default function CustomerTable({ className }: { className?: string }) {
   return (
     <BasicTableWidget
+      title="Customers Register"
       data={orderData}
       // @ts-ignore
       getColumns={getWidgetColumns}
@@ -12,7 +13,7 @@ export default function CustomerTable({ className }: { className?: string }) {
       enablePagination
       noGutter
       searchPlaceholder="Search..."
-      variant="modern"
+      variant="elegant"
     />
   );
 }

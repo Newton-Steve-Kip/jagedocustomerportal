@@ -1,9 +1,9 @@
 export const routes = {
   admin: {
     dashboard: '/admin',
-    profile: '/admin/profile',
     addToServiceProviders: '/admin/add-to-service-providers',
-    profileCreation: '/admin/profile/profile-creation',
+    fundiProfile: '/admin/service-providers/profile/profile-creation',
+    editfundiProfile: '/admin/service-providers/profile/edit-profile',
     registers: '/admin/registers',
     customer: '/admin/registers/customer',
     individual: '/admin/registers/individual',

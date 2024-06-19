@@ -63,7 +63,7 @@ export default function JobsWidget({ className }: { className?: string }) {
       }
       className={cn('@container', className)}
     >
-      <div className="h-96 w-full pb-4 pt-4 @sm:h-96 @xl:pb-0">
+      <div className="h-60 w-full pb-4 pt-4 @sm:h-60 @xl:pb-0">
         <ResponsiveContainer
           width="100%"
           height="100%"

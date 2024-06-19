@@ -18,7 +18,11 @@ const QuillEditor = dynamic(() => import('@/components/ui/quill-editor'), {
   loading: () => <QuillLoader className="col-span-full h-[143px]" />,
 });
 
-export default function ProductSummary({ className }: { className?: string }) {
+export default function PersonalDetailsForm({
+  className,
+}: {
+  className?: string;
+}) {
   const {
     register,
     control,
@@ -27,67 +31,61 @@ export default function ProductSummary({ className }: { className?: string }) {
 
   return (
     <FormGroup
-      title="Summary"
+      title="Personal Details"
       description="Edit your product description and necessary information from here"
       className={cn(className)}
     >
       <Input
-        label="Title"
-        placeholder="Product title"
+        label="Company Name"
+        placeholder="Company Name"
         {...register('title')}
         error={errors.title?.message as string}
       />
+
       <Input
-        label="SKU"
-        placeholder="Product sku"
+        label="Company Email"
+        placeholder="Company Email"
         {...register('sku')}
         error={errors.sku?.message as string}
       />
 
-      <Controller
-        name="type"
-        control={control}
-        render={({ field: { onChange, value } }) => (
-          <Select
-            dropdownClassName="!z-0"
-            options={typeOption}
-            value={value}
-            onChange={onChange}
-            label="Product Type"
-            error={errors?.type?.message as string}
-            getOptionValue={(option) => option.value}
-          />
-        )}
+      <Input
+        label="Company Number"
+        placeholder="Company Number"
+        {...register('sku')}
+        error={errors.sku?.message as string}
+      />
+      <Input
+        label="Contact Person First Name"
+        placeholder="Contact Person First Name"
+        {...register('sku')}
+        error={errors.sku?.message as string}
+      />
+      <Input
+        label="Contact Person Last Name"
+        placeholder="Contact Person Last Name"
+        {...register('sku')}
+        error={errors.sku?.message as string}
+      />
+      <Input
+        label="County"
+        placeholder="County"
+        {...register('sku')}
+        error={errors.sku?.message as string}
       />
 
-      <Controller
-        name="categories"
-        control={control}
-        render={({ field: { onChange, value } }) => (
-          <Select
-            options={categoryOption}
-            value={value}
-            onChange={onChange}
-            label="Categories"
-            error={errors?.categories?.message as string}
-            getOptionValue={(option) => option.value}
-            inPortal={false}
-          />
-        )}
+      <Input
+        label="Sub County"
+        placeholder="Sub County"
+        {...register('sku')}
+        error={errors.sku?.message as string}
       />
 
-      <Controller
-        control={control}
-        name="description"
-        render={({ field: { onChange, value } }) => (
-          <QuillEditor
-            value={value}
-            onChange={onChange}
-            label="Description"
-            className="col-span-full [&_.ql-editor]:min-h-[100px]"
-            labelClassName="font-medium text-gray-700 dark:text-gray-600 mb-1.5"
-          />
-        )}
+      <Input
+        label="Estate"
+        placeholder="Estate"
+        {...register('sku')}
+        error={errors.sku?.message as string}
       />
     </FormGroup>
   );

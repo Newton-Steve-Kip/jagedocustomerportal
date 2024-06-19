@@ -74,11 +74,11 @@ export default function SummaryWidget({ className }: { className?: string }) {
         </div>
       }
     >
-      <div className="h-[350px] w-full lg:h-[300px] min-[1780px]:h-[22rem] 3xl:h-96">
+      <div className="h-[250px] w-full lg:h-[250px] min-[1780px]:h-[22rem] 3xl:h-60">
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart
             layout="vertical"
-            margin={{ top: 20, bottom: -10, left: 20 }}
+            margin={{ top: 20, bottom: 30, left: 25 }}
             barCategoryGap={20}
             data={data}
             className="[&_.recharts-tooltip-cursor]:fill-opacity-20 dark:[&_.recharts-tooltip-cursor]:fill-opacity-10 [&_.recharts-cartesian-axis-tick-value]:fill-gray-500  rtl:[&_.recharts-cartesian-axis.yAxis]:-translate-x-12"

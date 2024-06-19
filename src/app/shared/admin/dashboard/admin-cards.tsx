@@ -151,51 +151,26 @@ const eComDashboardStatData = [
 export default function AdminCards({ className }: { className?: string }) {
   return (
     <div
-      className={cn('grid grid-cols-1 gap-5 3xl:gap-8 4xl:gap-9', className)}
+      className={cn(
+        'grid grid-cols-1 gap-5 3xl:gap-6  4xl:gap-9 4xl:gap-x-12',
+        className
+      )}
     >
       {eComDashboardStatData.map((stat) => (
         <Link key={stat.title + stat.id} href={routes.eCommerce.createProduct}>
           <CategoriesCard
-            // title={stat.title}
             metric={stat.metric}
-            metricClassName="lg:text-[22px]"
+            metricClassName="lg:text-[18px] text-sm" // Adjust metric text size
             icon={stat.icon}
             iconClassName={cn(
-              '[&>svg]:w-10 [&>svg]:h-8 lg:[&>svg]:w-11 lg:[&>svg]:h-9 w-auto h-auto p-0 bg-transparent -mx-1.5',
+              '[&>svg]:w-8 [&>svg]:h-8 lg:[&>svg]:w-10 lg:[&>svg]:h-10 w-auto h-auto p-0 bg-transparent -mx-1.5', // Adjust icon size
               stat.id === '1' &&
-                '[&>svg]:w-9 [&>svg]:h-7 lg:[&>svg]:w-[42px] lg:[&>svg]:h-[34px]',
+                '[&>svg]:w-7 [&>svg]:h-7 lg:[&>svg]:w-9 lg:[&>svg]:h-9',
               stat.style
             )}
-            // chart={
-            //   <ResponsiveContainer width="100%" height="100%">
-            //     <BarChart barSize={5} barGap={2} data={stat.chart}>
-            //       <Bar dataKey="sale" fill={stat.fill} radius={5} />
-            //     </BarChart>
-            //   </ResponsiveContainer>
-            // }
             chartClassName="hidden @[200px]:flex @[200px]:items-center h-14 w-24"
             className="@container [&>div]:items-center"
-          >
-            <Text className="mt-5 flex items-center border-t border-dashed border-muted pt-4 leading-none text-gray-500">
-              <Text
-                as="span"
-                className={cn(
-                  'me-2 inline-flex items-center font-medium',
-                  stat.increased ? 'text-green' : 'text-red'
-                )}
-              >
-                {stat.increased ? (
-                  <PiCaretDoubleUpDuotone className="me-1 h-4 w-4" />
-                ) : (
-                  <PiCaretDoubleDownDuotone className="me-1 h-4 w-4" />
-                )}
-                {stat.percentage}%
-              </Text>
-              <Text as="span" className="me-1 hidden @[240px]:inline-flex">
-                {stat.increased ? 'Increased' : 'Decreased'}
-              </Text>{' '}
-            </Text>
-          </CategoriesCard>
+          />
         </Link>
       ))}
     </div>

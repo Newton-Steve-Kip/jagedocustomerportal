@@ -66,37 +66,59 @@ export const getColumns = ({
     title: <HeaderCell title="Customer" />,
     dataIndex: 'customer',
     key: 'customer',
-    width: 300,
+    width: 450,
     render: (_: any, row: any) => (
       <TableAvatar
         src={row.avatar}
         name={row.name}
-        description={row.email.toLowerCase()}
+        // description={row.email.toLowerCase()}
       />
     ),
   },
   {
-    title: <HeaderCell title="Items" />,
-    dataIndex: 'items',
-    key: 'items',
-    width: 150,
+    title: <HeaderCell title="Phone Number" />,
+    dataIndex: 'phone',
+    key: 'phone',
+    width: 100,
     render: (value: string) => (
       <Text className="font-medium text-gray-700">{value}</Text>
     ),
   },
   {
-    title: (
-      <HeaderCell
-        title="Price"
-        sortable
-        ascending={
-          sortConfig?.direction === 'asc' && sortConfig?.key === 'price'
-        }
-      />
+    title: <HeaderCell title="Email" />,
+
+    dataIndex: 'email',
+    key: 'email',
+    width: 20,
+    render: (value: string) => (
+      <Text className="font-medium text-gray-700">${value}</Text>
     ),
-    onHeaderCell: () => onHeaderCellClick('price'),
-    dataIndex: 'price',
-    key: 'price',
+  },
+  {
+    title: <HeaderCell title="Gender" />,
+
+    dataIndex: 'gender',
+    key: 'gender',
+    width: 150,
+    render: (value: string) => (
+      <Text className="font-medium text-gray-700">${value}</Text>
+    ),
+  },
+  {
+    title: <HeaderCell title="Age" />,
+
+    dataIndex: 'age',
+    key: 'age',
+    width: 150,
+    render: (value: string) => (
+      <Text className="font-medium text-gray-700">${value}</Text>
+    ),
+  },
+  {
+    title: <HeaderCell title="Location" />,
+
+    dataIndex: 'location',
+    key: 'location',
     width: 150,
     render: (value: string) => (
       <Text className="font-medium text-gray-700">${value}</Text>
@@ -105,7 +127,7 @@ export const getColumns = ({
   {
     title: (
       <HeaderCell
-        title="Created"
+        title="Joined Date"
         sortable
         ascending={
           sortConfig?.direction === 'asc' && sortConfig?.key === 'createdAt'
@@ -115,22 +137,6 @@ export const getColumns = ({
     onHeaderCell: () => onHeaderCellClick('createdAt'),
     dataIndex: 'createdAt',
     key: 'createdAt',
-    width: 200,
-    render: (value: Date) => <DateCell date={value} />,
-  },
-  {
-    title: (
-      <HeaderCell
-        title="Modified"
-        sortable
-        ascending={
-          sortConfig?.direction === 'asc' && sortConfig?.key === 'updatedAt'
-        }
-      />
-    ),
-    onHeaderCell: () => onHeaderCellClick('updatedAt'),
-    dataIndex: 'updatedAt',
-    key: 'updatedAt',
     width: 200,
     render: (value: Date) => <DateCell date={value} />,
   },
@@ -200,7 +206,7 @@ export const getWidgetColumns = ({
 }: Columns) => [
   {
     title: (
-      <HeaderCell title="Order ID" className="ps-4 [&>div]:whitespace-nowrap" />
+      <HeaderCell title="NO." className="ps-4 [&>div]:whitespace-nowrap" />
     ),
     dataIndex: 'id',
     key: 'id',
@@ -215,23 +221,78 @@ export const getWidgetColumns = ({
     ),
   },
   {
-    title: <HeaderCell title="Customer" />,
-    dataIndex: 'customer',
-    key: 'customer',
-    width: 300,
+    title: <HeaderCell title="First Name" />,
+    dataIndex: 'firstName',
+    key: 'firstName',
+    width: 140,
     render: (_: any, row: any) => (
       <TableAvatar
+        className="mr-6"
         src={row.avatar}
-        name={row.name}
-        description={row.email.toLowerCase()}
+        name={row.firstName}
+        // description={row.email.toLowerCase()}
       />
     ),
   },
   {
-    title: <HeaderCell title="Items" />,
-    dataIndex: 'items',
-    key: 'items',
-    width: 150,
+    title: <HeaderCell title="Last Name" />,
+    dataIndex: 'lastName',
+    key: 'lastName',
+    width: 100,
+    render: (_: any, row: any) => (
+      <TableAvatar
+        name={row.lastName}
+        // description={row.email.toLowerCase()}
+      />
+    ),
+  },
+  {
+    title: <HeaderCell title="Phone Number" />,
+    dataIndex: 'phone',
+    key: 'phone',
+    width: 50,
+    render: (value: string) => (
+      <Text className="font-medium text-gray-700">{value}</Text>
+    ),
+  },
+  {
+    title: <HeaderCell title="Email" />,
+
+    dataIndex: 'email',
+    key: 'email',
+    width: 30,
+    render: (value: string) => (
+      <Text className="grid w-1/4 gap-1 font-medium text-gray-700">
+        {value}
+      </Text>
+    ),
+  },
+  {
+    title: <HeaderCell title="Gender" />,
+
+    dataIndex: 'gender',
+    key: 'gender',
+    width: 20,
+    render: (value: string) => (
+      <Text className="font-medium text-gray-700">{value}</Text>
+    ),
+  },
+  {
+    title: <HeaderCell title="Age" />,
+
+    dataIndex: 'age',
+    key: 'age',
+    width: 50,
+    render: (value: string) => (
+      <Text className="font-medium text-gray-700">{value}</Text>
+    ),
+  },
+  {
+    title: <HeaderCell title="Location" />,
+
+    dataIndex: 'location',
+    key: 'age',
+    width: 70,
     render: (value: string) => (
       <Text className="font-medium text-gray-700">{value}</Text>
     ),
@@ -239,25 +300,7 @@ export const getWidgetColumns = ({
   {
     title: (
       <HeaderCell
-        title="Price"
-        sortable
-        ascending={
-          sortConfig?.direction === 'asc' && sortConfig?.key === 'price'
-        }
-      />
-    ),
-    onHeaderCell: () => onHeaderCellClick('price'),
-    dataIndex: 'price',
-    key: 'price',
-    width: 150,
-    render: (value: string) => (
-      <Text className="font-medium text-gray-700">${value}</Text>
-    ),
-  },
-  {
-    title: (
-      <HeaderCell
-        title="Created"
+        title="Joined Date"
         sortable
         ascending={
           sortConfig?.direction === 'asc' && sortConfig?.key === 'createdAt'
@@ -267,38 +310,23 @@ export const getWidgetColumns = ({
     onHeaderCell: () => onHeaderCellClick('createdAt'),
     dataIndex: 'createdAt',
     key: 'createdAt',
-    width: 200,
+    width: 120,
     render: (createdAt: Date) => <DateCell date={createdAt} />,
   },
-  {
-    title: (
-      <HeaderCell
-        title="Modified"
-        sortable
-        ascending={
-          sortConfig?.direction === 'asc' && sortConfig?.key === 'updatedAt'
-        }
-      />
-    ),
-    onHeaderCell: () => onHeaderCellClick('updatedAt'),
-    dataIndex: 'updatedAt',
-    key: 'updatedAt',
-    width: 200,
-    render: (value: Date) => <DateCell date={value} />,
-  },
+
   {
     title: <HeaderCell title="Status" />,
     dataIndex: 'status',
     key: 'status',
-    width: 140,
+    width: 80,
     render: (value: string) => getStatusBadge(value),
   },
   {
     // Need to avoid this issue -> <td> elements in a large <table> do not have table headers.
-    title: <HeaderCell title="Actions" className="opacity-0" />,
+    title: <HeaderCell title="Actions" />,
     dataIndex: 'action',
     key: 'action',
-    width: 130,
+    width: 120,
     render: (_: string, row: any) => (
       <div className="flex items-center justify-end gap-3 pe-4">
         <Tooltip
@@ -337,11 +365,11 @@ export const getWidgetColumns = ({
             </ActionIcon>
           </Link>
         </Tooltip>
-        <DeletePopover
+        {/* <DeletePopover
           title={`Delete the order`}
           description={`Are you sure you want to delete this #${row.id} order?`}
           onDelete={() => onDeleteItem(row.id)}
-        />
+        /> */}
       </div>
     ),
   },

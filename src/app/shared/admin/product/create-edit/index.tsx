@@ -9,17 +9,9 @@ import { Text } from 'rizzui';
 import cn from '@/utils/class-names';
 import FormNav, {
   formParts,
-} from '@/app/shared/ecommerce/product/create-edit/form-nav';
-import ProductSummary from '@/app/shared/ecommerce/product/create-edit/product-summary';
-import { defaultValues } from '@/app/shared/ecommerce/product/create-edit/form-utils';
-import ProductMedia from '@/app/shared/ecommerce/product/create-edit/product-media';
-import PricingInventory from '@/app/shared/ecommerce/product/create-edit/pricing-inventory';
-import ProductIdentifiers from '@/app/shared/ecommerce/product/create-edit/product-identifiers';
-import ShippingInfo from '@/app/shared/ecommerce/product/create-edit/shipping-info';
-import ProductSeo from '@/app/shared/ecommerce/product/create-edit/product-seo';
-import DeliveryEvent from '@/app/shared/ecommerce/product/create-edit/delivery-event';
-import ProductVariants from '@/app/shared/ecommerce/product/create-edit/product-variants';
-import ProductTaxonomies from '@/app/shared/ecommerce/product/create-edit/product-tags';
+} from '@/app/shared/admin/product/create-edit/form-nav';
+import { defaultValues } from '@/app/shared/admin/product/create-edit/form-utils';
+import ProductMedia from '@/app/shared/admin/product/create-edit/product-media';
 import FormFooter from '@/components/form-footer';
 import {
   CreateProductInput,
@@ -27,17 +19,11 @@ import {
 } from '@/utils/validators/create-product.schema';
 import { useLayout } from '@/hooks/use-layout';
 import { LAYOUT_OPTIONS } from '@/config/enums';
+import PersonalDetailsForm from '@/app/shared/admin/product/create-edit/product-summary';
 
 const MAP_STEP_TO_COMPONENT = {
-  [formParts.summary]: ProductSummary,
-  [formParts.media]: ProductMedia,
-  [formParts.pricingInventory]: PricingInventory,
-  [formParts.productIdentifiers]: ProductIdentifiers,
-  [formParts.shipping]: ShippingInfo,
-  [formParts.seo]: ProductSeo,
-  [formParts.deliveryEvent]: DeliveryEvent,
-  [formParts.variantOptions]: ProductVariants,
-  [formParts.tagsAndCategory]: ProductTaxonomies,
+  [formParts.personalDetails]: PersonalDetailsForm,
+  [formParts.requiredDetails]: ProductMedia,
 };
 
 interface IndexProps {
@@ -74,7 +60,7 @@ export default function CreateEditProduct({
     <div className="@container">
       <FormNav
         className={cn(
-          layout === LAYOUT_OPTIONS.BERYLLIUM && 'z-[999] 2xl:top-[72px]'
+          layout === LAYOUT_OPTIONS.HYDROGEN && 'z-[999] 2xl:top-[72px]'
         )}
       />
       <FormProvider {...methods}>
