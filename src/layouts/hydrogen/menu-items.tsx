@@ -82,6 +82,7 @@ export const menuItems = [
         href: routes.admin.fundiProfile,
         badge: '',
       },
+
       {
         name: 'Edit Profile Creation',
         href: routes.admin.editfundiProfile,
@@ -89,7 +90,7 @@ export const menuItems = [
       },
       {
         name: 'Customer register',
-        href: routes.admin.customer,
+        href: routes.admin.customers,
         badge: '',
       },
       // {
@@ -120,6 +121,29 @@ export const menuItems = [
       {
         name: 'Assign Service Providers',
         href: routes.admin.addToServiceProviders,
+        badge: '',
+      },
+    ],
+  },
+
+  {
+    name: 'Customers',
+    href: routes.admin.dashboard,
+    icon: <PiUserDuotone />,
+    dropdownItems: [
+      {
+        name: 'generate invoice',
+        href: routes.customers.generateInvoice,
+        badge: '',
+      },
+      {
+        name: 'invoice',
+        href: routes.customers.invoice,
+        badge: '',
+      },
+      {
+        name: 'View Requisition',
+        href: routes.customers.viewRequisition,
         badge: '',
       },
     ],

@@ -1,10 +1,5 @@
 import Image from 'next/image';
 
-import WelcomeBanner from '@/components/banners/welcome';
-
-import welcomeImg from '@public/shop-illustration.png';
-import HandWaveIcon from '@/components/icons/hand-wave';
-import RegisterTable from '../ecommerce/dashboard/register';
 import CustomerTable from '../admin/dashboard/tables/customer-register';
 import CustomersTable from '../admin/dashboard/tables/customers';
 
@@ -24,8 +19,6 @@ export default function CustomersPage() {
           contentClassName="@2xl:max-w-[calc(100%-340px)]"
           className="border border-none border-muted bg-gray-0 pb-4 @4xl:col-span-2 @7xl:col-span-8 dark:bg-gray-100/30 lg:pb-4"
         ></WelcomeBanner> */}
-
-        <CustomerTable className="relative  @4xl:col-span-2 @7xl:col-span-12" />
         <CustomersTable className="relative  @4xl:col-span-2 @7xl:col-span-12" />
       </div>
     </div>

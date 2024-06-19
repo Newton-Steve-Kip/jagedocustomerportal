@@ -5,7 +5,7 @@ export const routes = {
     fundiProfile: '/admin/service-providers/profile/profile-creation',
     editfundiProfile: '/admin/service-providers/profile/edit-profile',
     registers: '/admin/registers',
-    customer: '/admin/registers/customer',
+    customers: '/admin/registers/customer',
     individual: '/admin/registers/individual',
     organization: '/admin/registers/organization',
     serviceProvider: '/admin/registers/service-provider',
@@ -14,6 +14,14 @@ export const routes = {
     quotations: '/admin/quotations',
     analyzeQuotations: '/admin/quotations/analyzeQuotations',
     evaluate: '/admin/quotations/evaluateQuotations',
+  },
+
+  customers: {
+    dashboard: '/customers',
+    generateInvoice: '/customers/generate-invoice',
+    invoice: '/customers/invoice',
+    jobs: '/customers/jobs',
+    viewRequisition: '/customers/requisitions/view-requisition',
   },
 
   eCommerce: {
