@@ -1,15 +1,26 @@
 export const routes = {
   admin: {
     dashboard: '/admin',
+
+    //Profile
+    createCustomerProfile: '/admin/profile/create-profile/customers',
+    createFundiProfile: '/admin/profile/create-profile/fundi',
+    createContractorProfile: '/admin/profile/create-profile/contractor',
+    createProfessionalProfile: '/admin/profile/create-profile/professional',
+    editCustomerProfile: '/admin/profile/create-profile/customers',
+    editFundiProfile: '/admin/profile/edit-profile/fundi',
+    editContractorProfile: '/admin/profile/edit-profile/contractor',
+    editProfessionalProfile: '/admin/profile/edit-profile/professional',
     addToServiceProviders: '/admin/add-to-service-providers',
-    fundiProfile: '/admin/service-providers/profile/profile-creation',
-    editfundiProfile: '/admin/service-providers/profile/edit-profile',
+
+    //Registers
     registers: '/admin/registers',
     customers: '/admin/registers/customer',
     individual: '/admin/registers/individual',
     organization: '/admin/registers/organization',
     serviceProvider: '/admin/registers/service-provider',
-    requisitions: '/admin/registers/requisitions',
+    adminRequisitions: '/admin/registers/requisitions/admin',
+    customerRequisitions: '/admin/registers/requisitions/customer',
     assignServiceProvider: '/admin/service-providers/assign-service-provider',
     quotations: '/admin/quotations',
     analyzeQuotations: '/admin/quotations/analyzeQuotations',

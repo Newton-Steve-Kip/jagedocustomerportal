@@ -79,18 +79,23 @@ export const menuItems = [
 
       {
         name: 'Fundi Profile Creation',
-        href: routes.admin.fundiProfile,
+        href: routes.admin.createFundiProfile,
         badge: '',
       },
 
       {
         name: 'Edit Profile Creation',
-        href: routes.admin.editfundiProfile,
+        href: routes.admin.editFundiProfile,
         badge: '',
       },
       {
         name: 'Customer register',
         href: routes.admin.customers,
+        badge: '',
+      },
+      {
+        name: 'Individual register',
+        href: routes.admin.individual,
         badge: '',
       },
       // {
@@ -109,8 +114,13 @@ export const menuItems = [
         badge: '',
       },
       {
-        name: 'Requisitions',
-        href: routes.admin.requisitions,
+        name: 'Admin Requisitions',
+        href: routes.admin.adminRequisitions,
+        badge: '',
+      },
+      {
+        name: 'Customer Requisitions',
+        href: routes.admin.customerRequisitions,
         badge: '',
       },
       {
