@@ -1,41 +1,53 @@
 import AdminCards from './admin-cards';
+import SpType from './spType';
 import SummaryWidget from './summary';
 import JobsWidget from '@/app/shared/admin/dashboard/promotional-sales';
+import SummaryWidgetCustomers from './summaryCustomer';
+import StatusCard from './status-card';
+import WalletCard from './wallet';
+import PendingInvoiceCard from './pendinginvoice';
 
 export default function AdminDashboard() {
+  const items = [
+    { text: 'Repair broken pipe', subText: 'Yesterday' },
+    { text: 'Construction materials needed', subText: '2h ago' },
+    { text: 'Fix my bathtub', subText: 'Tomorrow at 10:00 AM' },
+    { text: 'Paint my 3 bedroom house', subText: 'In 3 days' },
+    { text: 'Repair broken pipe', subText: 'Yesterday' },
+    { text: 'Construction materials needed', subText: '2h ago' },
+    { text: 'Fix my bathtub', subText: 'Tomorrow at 10:00 AM' },
+    { text: 'Paint my 3 bedroom house', subText: 'In 3 days' },
+    { text: 'Repair broken pipe', subText: 'Yesterday' },
+    { text: 'Construction materials needed', subText: '2h ago' },
+    { text: 'Fix my bathtub', subText: 'Tomorrow at 10:00 AM' },
+    { text: 'Paint my 3 bedroom house', subText: 'In 3 days' },
+  ];
+  // Wallet data
+  const balance = 'KSH 1,234.56';
+
+  // Pending invoice data
+  const invoiceId = 'INV123456';
+  const amount = 1234.56;
+  const dueDate = '2024-06-25';
+
   return (
     <div className="@container">
-      <div className="grid grid-cols-1 gap-6 @4xl:grid-cols-2 @7xl:grid-cols-12 3xl:gap-8">
-        {/* <WelcomeBanner
-          title={
-            <>
-              Good Evening, <br /> Cameron{' '}
-              <HandWaveIcon className="inline-flex h-8 w-8" />
-            </>
-          }
-          description={
-            'Here’s What happening  today. See the statistics at once.'
-          }
-          media={
-            <div className="absolute -bottom-6 end-4 hidden w-[300px] @2xl:block lg:w-[320px] 2xl:-bottom-7 2xl:w-[330px]">
-              <div className="relative">
-                <Image
-                  src={welcomeImg}
-                  alt="Welcome shop image form freepik"
-                  className="dark:brightness-95 dark:drop-shadow-md"
-                />
-              </div>
-            </div>
-          }
-          contentClassName="@2xl:max-w-[calc(100%-340px)]"
-          className="border border-muted bg-gray-0 pb-8 @4xl:col-span-2 @7xl:col-span-8 dark:bg-gray-100/30 lg:pb-9"
-        >
-        
-        </WelcomeBanner> */}
+      <div className="grid grid-cols-1 gap-4 @4xl:grid-cols-2 @7xl:grid-cols-12 3xl:gap-8">
 
-        <AdminCards className="py-5 @2xl:grid-cols-3  @3xl:gap-6 @4xl:col-span-2 @4xl:grid-cols-4 @7xl:col-span-8" />
-        <SummaryWidget className="h-[300px] @sm:h-[320px] @7xl:col-span-4 @7xl:col-start-9 @7xl:row-start-1 @7xl:row-end-3 @7xl:h-full" />
-        <JobsWidget className="h-[300px] @sm:h-[320px] @4xl:col-start-2  @7xl:col-span-4 @7xl:col-start-auto @7xl:row-start-auto" />
+        <SpType className="py-5 @2xl:grid-cols-3  @3xl:gap-6 @4xl:col-span-2 @4xl:grid-cols-4 @7xl:col-span-8" />
+        <SummaryWidgetCustomers className="h-[150px] @sm:h-[320px] @7xl:col-span-4 @7xl:col-start-9 @7xl:row-start-1 @7xl:row-end-3 @7xl:h-full" />
+        <StatusCard
+          className="h-[150px] @sm:h-[320px] @4xl:col-start-2 @7xl:col-span-4 @7xl:col-start-auto @7xl:row-start-auto"
+          title="Status Updates"
+          items={items}
+          seeAllText="See All"/>
+        <WalletCard className="h-[150px] @sm:h-[320px] @7xl:col-span-4 @7xl:col-start-9 @7xl:row-start-1 @7xl:row-end-3 @7xl:h-full" balance={balance} />
+        <PendingInvoiceCard
+          className="h-[150px] @sm:h-[320px] @4xl:col-start-2 @7xl:col-span-4 @7xl:col-start-auto @7xl:row-start-auto"
+          invoiceId={invoiceId}
+          amount={amount}
+          dueDate={dueDate}
+          />
       </div>
     </div>
   );
