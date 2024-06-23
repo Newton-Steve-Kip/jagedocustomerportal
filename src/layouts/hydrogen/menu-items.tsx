@@ -44,13 +44,13 @@ import {
   PiCalendarDuotone,
   PiShapesDuotone,
   PiNewspaperClippingDuotone,
-  PiGauge ,
+  PiGauge,
   PiBriefcase,
   PiHammer,
   PiHardHat,
   PiStorefront,
   PiStar,
-  PiProjectorScreenChart
+  PiProjectorScreenChart,
 } from 'react-icons/pi';
 
 // Note: do not add href in the label object, it is rendering as label
@@ -63,7 +63,7 @@ export const menuItems = [
   {
     name: 'Home',
     href: '/',
-    icon: < PiGauge />,
+    icon: <PiGauge />,
   },
 
   // {
@@ -84,57 +84,47 @@ export const menuItems = [
   //       badge: '',
   //     },
 
-      
-      
   //     // {
   //     //   name: 'Individual register',
   //     //   href: routes.admin.individual,
   //     //   badge: '',
   //     // },
-      
-      
-      
+
   //   ],
 
-
-
   // },
-
 
   {
     name: 'Fundi ',
     href: routes.admin.createFundiProfile,
     badge: '',
-    icon: <PiHammer />
+    icon: <PiHammer />,
   },
 
   {
     name: 'Professional',
     href: routes.admin.createProfessionalProfile,
     badge: '',
-    icon: <PiBriefcase />
+    icon: <PiBriefcase />,
   },
   {
     name: 'Contractor',
     href: routes.admin.editFundiProfile,
     badge: '',
-    icon: <PiHardHat />
+    icon: <PiHardHat />,
   },
   {
     name: 'Shop Now',
     href: routes.admin.serviceProvider,
     badge: '',
-    icon: <PiStorefront />
+    icon: <PiStorefront />,
   },
-
-
 
   {
     name: 'My Projects',
     href: routes.admin.customers,
     badge: '',
-    icon: < PiProjectorScreenChart />,
-
+    icon: <PiProjectorScreenChart />,
   },
   {
     name: ' Reviews',
@@ -142,7 +132,6 @@ export const menuItems = [
     badge: '',
     icon: <PiStar />,
   },
-
 
   // {
   //   name: 'Customers',
@@ -166,7 +155,7 @@ export const menuItems = [
   //     },
   //   ],
   // },
-  
+
   {
     name: 'Settings',
   },
@@ -175,6 +164,13 @@ export const menuItems = [
     name: 'Account Settings',
     href: routes.forms.profileSettings,
     icon: <PiUserGearDuotone />,
+    dropdownItems: [
+      {
+        name: '',
+        href: '',
+        badge: '',
+      },
+    ],
   },
   // {
   //   name: 'Notification Preference',
