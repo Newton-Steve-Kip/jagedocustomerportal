@@ -11,11 +11,11 @@ export default function OrderDetailsPage({ params }: any) {
     breadcrumb: [
       {
         href: routes.admin.dashboard,
-        name: 'E-Commerce',
+        name: '',
       },
       {
         href: routes.admin.editProfessionalProfile,
-        name: 'Professional',
+        name: '',
       },
       {
         name: params.id,

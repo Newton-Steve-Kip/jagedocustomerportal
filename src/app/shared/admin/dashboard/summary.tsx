@@ -20,16 +20,16 @@ const data = [
   },
   {
     group: 'Professionals',
-    number: 5,
+    number: 3,
   },
   {
     group: 'Contractors',
-    number: 11,
+    number: 5,
   },
-  {
-    group: 'Customers',
-    number: 17,
-  },
+  // {
+  //   group: 'Customers',
+  //   number: 17,
+  // },
 ];
 
 export default function SummaryWidget({ className }: { className?: string }) {
@@ -52,7 +52,7 @@ export default function SummaryWidget({ className }: { className?: string }) {
       descriptionClassName="text-gray-500 mt-1.5"
       description={
         <div className="flex items-center gap-2">
-          <span>Service Providers and Customers: </span>
+          <span>Summary: </span>
           {/* <DatePicker
             dateFormat="yyyy"
             placeholderText="Select Year"

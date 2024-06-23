@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 const pageHeader = {
-  title: 'Profile',
+  title: 'Requisition',
   breadcrumb: [
     {
       href: '/',

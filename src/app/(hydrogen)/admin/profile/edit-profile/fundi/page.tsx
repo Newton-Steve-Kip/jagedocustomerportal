@@ -7,15 +7,15 @@ import EditFundiForm from '@/app/shared/admin/profile/edit-profile/fundi/page';
 
 export default function OrderDetailsPage({ params }: any) {
   const pageHeader = {
-    title: `Profile`,
+    title: ``,
     breadcrumb: [
       {
         href: routes.admin.dashboard,
-        name: 'E-Commerce',
+        name: '',
       },
       {
         href: routes.admin.editFundiProfile,
-        name: 'Orders',
+        name: '',
       },
       {
         name: params.id,

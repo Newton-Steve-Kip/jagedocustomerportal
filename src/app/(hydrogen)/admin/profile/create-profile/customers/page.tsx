@@ -16,14 +16,14 @@ const pageHeader = {
   breadcrumb: [
     {
       href: routes.admin.dashboard,
-      name: 'Service Providers',
+      name: '',
     },
     {
       href: routes.admin.createCustomerProfile,
-      name: 'Customers',
+      name: '',
     },
     {
-      name: 'Create profile',
+      name: '',
     },
   ],
 };

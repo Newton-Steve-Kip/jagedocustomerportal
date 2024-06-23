@@ -11,18 +11,18 @@ export const metadata = {
 };
 
 const pageHeader = {
-  title: 'Professional Profile Creation',
+  title: '',
   breadcrumb: [
     {
       href: routes.admin.dashboard,
-      name: 'Service Providers',
+      name: '',
     },
     {
       href: routes.admin.createProfessionalProfile,
-      name: 'Fundi',
+      name: '',
     },
     {
-      name: 'Create profile',
+      name: '',
     },
   ],
 };

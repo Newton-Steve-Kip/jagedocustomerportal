@@ -1,141 +1,217 @@
 'use client';
 
-import Image from 'next/image';
-import { useAtomValue } from 'jotai';
-import isEmpty from 'lodash/isEmpty';
-import { PiCheckBold, PiPlusBold, PiUserBold } from 'react-icons/pi';
-import {
-  billingAddressAtom,
-  orderNoteAtom,
-  shippingAddressAtom,
-} from '@/store/checkout';
-import OrderViewProducts from '@/app/shared/ecommerce/order/order-products/order-view-products';
-import { useCart } from '@/store/quick-cart/cart.context';
-import { Title, Text, Button } from 'rizzui';
-import cn from '@/utils/class-names';
-import { toCurrency } from '@/utils/to-currency';
-import { formatDate } from '@/utils/format-date';
-import usePrice from '@/hooks/use-price';
-import { routes } from '@/config/routes';
-import Link from 'next/link';
-import CustomersTable from '../../../dashboard/tables/customers';
+import React, { useState } from 'react';
+import './CreateForm.css';
 
-function WidgetCard({
-  title,
-  className,
-  children,
-  childrenWrapperClass,
-}: {
-  title?: string;
-  className?: string;
-  children: React.ReactNode;
-  childrenWrapperClass?: string;
-}) {
-  return (
-    <div className={className}>
-      <Title
-        as="h3"
-        className="mb-3.5 text-base font-semibold @5xl:mb-5 4xl:text-lg"
-      >
-        {title}
-      </Title>
-      <div
-        className={cn(
-          'rounded-lg border border-muted px-5 @sm:px-7 @5xl:rounded-xl',
-          childrenWrapperClass
-        )}
-      >
-        {children}
-      </div>
-    </div>
-  );
-}
+const CreateForm: React.FC = () => {
+  const [description, setDescription] = useState('');
+  const [emergency, setEmergency] = useState('');
+  const [date, setDate] = useState('');
+  const [skill, setSkill] = useState('');
+  const [location, setLocation] = useState('');
+  const [file, setFile] = useState<File | null>(null);
 
-export default function EditFundiForm() {
-  const { items, total, totalItems } = useCart();
-  const { price: subtotal } = usePrice(
-    items && {
-      amount: total,
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setFile(event.target.files[0]);
     }
-  );
-  const { price: totalPrice } = usePrice({
-    amount: total,
-  });
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // Handle form submission logic
+    console.log({
+      description,
+      emergency,
+      date,
+      skill,
+      location,
+      file,
+    });
+  };
 
   return (
-    <div className="@container">
-      <div className="items-start pt-5 @5xl:grid @5xl:grid-cols-12 @5xl:gap-7 @6xl:grid-cols-10 @7xl:gap-10">
-        <div className="space-y-7 pt-8 @container @5xl:col-span-4 @5xl:space-y-10 @5xl:pt-0 @6xl:col-span-3">
-          <WidgetCard
-            className="mb-7.5 @5xl:mb-5"
-            title="Customers Details"
-            childrenWrapperClass="py-5 @5xl:py-8 flex"
-          >
-            <div className="relative aspect-square h-16 w-16 shrink-0 @5xl:h-20 @5xl:w-20">
-              <Image
-                fill
-                alt="avatar"
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw"
-                src="https://isomorphic-furyroad.s3.amazonaws.com/public/avatar.png"
+    <div className="container mx-auto p-4">
+      <div className="w-full rounded-lg bg-white p-6 shadow-md">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="form-group col-span-2">
+              <label
+                htmlFor="description"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Add description
+              </label>
+              <textarea
+                id="description"
+                className="mt-1 block h-12 w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm md:h-auto"
+                placeholder="Add description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
               />
             </div>
-
-            <div className="ps-4 @5xl:ps-6">
-              <Title
-                as="h3"
-                className="mb-2.5 text-base font-semibold @7xl:text-lg"
+            <div className="form-group">
+              <label className="block text-sm font-medium text-gray-700">
+                Managed by: You
+              </label>
+              <input
+                type="text"
+                value="Managed by: You"
+                readOnly
+                className="mt-1 block w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              />
+            </div>
+            <div className="form-group">
+              <label
+                htmlFor="skill"
+                className="block text-sm font-medium text-gray-700"
               >
-                Leslie Alexander
-              </Title>
-              <Text as="p" className="mb-2 break-all last:mb-0">
-                nevaeh.simmons@example.com
-              </Text>
-              <Text as="p" className="mb-2 last:mb-0">
-                (316) 555-0116
-              </Text>
+                Skill
+              </label>
+              <select
+                id="skill"
+                value={skill}
+                onChange={(e) => setSkill(e.target.value)}
+                className="mt-1 block w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              >
+                <option value="" disabled>
+                  Select a skill
+                </option>
+                <option value="Skill1">Skill 1</option>
+                <option value="Skill2">Skill 2</option>
+                <option value="Skill3">Skill 3</option>
+              </select>
             </div>
-          </WidgetCard>
+            <div className="form-group">
+              <label
+                htmlFor="emergency"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Emergency
+              </label>
+              <select
+                id="emergency"
+                value={emergency}
+                onChange={(e) => setEmergency(e.target.value)}
+                className="mt-1 block w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              >
+                <option value="" disabled>
+                  Select an option
+                </option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div className="form-group">
+              <label
+                htmlFor="date"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Date
+              </label>
+              <input
+                type="date"
+                id="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                className="mt-1 block w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              />
+            </div>
+            <div className="form-group">
+              <label
+                htmlFor="location"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Confirm Location
+              </label>
+              <input
+                type="text"
+                id="location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                className="mt-1 block w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              />
+            </div>
+            <div className="form-group">
+              <label
+                htmlFor="file"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Upload doc e.g jpeg,pdf
+              </label>
+              <input
+                type="file"
+                id="file"
+                onChange={handleFileChange}
+                className="mt-1 block w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              />
+            </div>
+            <div className="form-group col-span-2 flex items-center">
+              <input
+                type="checkbox"
+                id="agreement"
+                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label
+                htmlFor="agreement"
+                className="ml-2 block text-sm text-gray-900"
+              >
+                I agree to the{' '}
+                <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                  Fundi Agreement
+                </a>
+              </label>
+            </div>
+          </div>
 
-          <Link
-            href={routes.eCommerce.createProduct}
-            className="inline-flex flex-grow"
+          <button
+            type="submit"
+            className="w-full rounded-md bg-indigo-600 px-4 py-2 text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
-            <Button as="span" className="h-[38px] shadow md:h-10">
-              Edit Profile
-            </Button>
-          </Link>
-        </div>
+            Generate Invoice
+          </button>
+        </form>
 
-        <div className="space-y-6 @5xl:col-span-8 @5xl:space-y-10 @6xl:col-span-7">
-          <div className="">
-            <div className="mb-3.5 @5xl:mb-5">
-              <Title as="h3" className="text-base font-semibold @7xl:text-lg">
-                Contact Details
-              </Title>
+        <div className="mt-8">
+          <h3 className="text-lg font-medium leading-6 text-gray-900">
+            Packages:
+          </h3>
+          <div className="mt-4 flex space-x-6">
+            <div className="package w-1/3 rounded-lg bg-gray-100 p-4 shadow-md">
+              <h4 className="text-md font-bold">Emergency</h4>
+              <ul className="mt-2 list-inside list-disc text-sm">
+                <li>Standard linkage fee of Ksh 3000 exclusive Materials</li>
+                <li>Response time within 24hrs</li>
+                <li>Fee inclusive of one day payment to Fundi</li>
+              </ul>
             </div>
-            <div className="space-y-4 rounded-xl border border-muted px-4 py-2 @5xl:space-y-7 @5xl:p-7">
-              <div className="flex justify-between font-medium">
-                Skill <span>Architect</span>
-              </div>
-              <div className="flex justify-between font-medium">
-                First Name <span>Olive</span>
-              </div>
-              <div className="flex justify-between font-medium">
-                Last Name <span>Wangari</span>
-              </div>
-              <div className="flex justify-between font-medium">
-                Email Address <span>Olive@gmail.com</span>
-              </div>
-              <div className="flex justify-between font-medium">
-                Phone Number <span>0704032343</span>
-              </div>
+            <div className="package w-1/3 rounded-lg bg-gray-100 p-4 shadow-md">
+              <h4 className="text-md font-bold">
+                Standard Request At least 3 Fundi without quotes
+              </h4>
+              <ul className="mt-2 list-inside list-disc text-sm">
+                <li>Standard linkage fee of Ksh 1000</li>
+                <li>Responds within 4 - 5 days</li>
+                <li>Managed by YOU (Customer)</li>
+                <li>Fee is exclusive of payment to fundi</li>
+              </ul>
+            </div>
+            <div className="package w-1/3 rounded-lg bg-gray-100 p-4 shadow-md">
+              <h4 className="text-md font-bold">
+                Standard Request At least 3 Fundi with quotes
+              </h4>
+              <ul className="mt-2 list-inside list-disc text-sm">
+                <li>Standard linkage fee of Ksh 5000</li>
+                <li>Response within 7 days</li>
+                <li>Managed by YOU (Customer)</li>
+                <li>Fee is exclusive of payment to fundi</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-
-      <CustomersTable className="mt-6" />
     </div>
   );
-}
+};
+
+export default CreateForm;
