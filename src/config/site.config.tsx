@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import logoImg from '@public/logo.svg';
 import { LAYOUT_OPTIONS } from '@/config/enums';
-import logoIconImg from '@public/logo-short.svg';
+import Japageo_01 from '@public/fwdhello/Japageo_01.png';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 enum MODE {
@@ -12,8 +12,8 @@ enum MODE {
 export const siteConfig = {
   title: 'Jagedo',
   description: `Isomorphic the ultimate React TypeScript Admin Template. Streamline your admin dashboard development with our feature-rich, responsive, and highly customizable solution. Boost productivity and create stunning admin interfaces effortlessly.`,
-  logo: logoImg,
-  icon: logoIconImg,
+  logo: Japageo_01,
+  icon: Japageo_01,
   mode: MODE.LIGHT,
   layout: LAYOUT_OPTIONS.HYDROGEN,
   // TODO: favicon

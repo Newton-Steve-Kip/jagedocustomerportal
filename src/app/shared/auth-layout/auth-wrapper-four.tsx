@@ -65,7 +65,9 @@ export default function AuthWrapperFour({
         >
           <div className="flex flex-col items-center">
             <Link href={'/'} className="mb-7 inline-block max-w-[64px] lg:mb-9">
-              <Image src={siteConfig.icon} alt={siteConfig.title} />
+              <div className="-mb-28 -ml-20 h-40  w-40  items-center">
+                <Image src={siteConfig.icon} alt={siteConfig.title} />
+              </div>
             </Link>
             <Title
               as="h2"
@@ -107,14 +109,16 @@ function AuthHeader() {
   return (
     <header className="flex items-center justify-between p-4 lg:px-16 lg:py-6 2xl:px-24">
       <Link href={'/'}>
-        <Image
-          src={siteConfig.logo}
-          alt={siteConfig.title}
-          className="dark:invert"
-          priority
-        />
+        <div className="h-20 w-20">
+          <Image
+            src={siteConfig.logo}
+            alt={siteConfig.title}
+            className="dark:invert"
+            priority
+          />
+        </div>
       </Link>
-      <div className="flex items-center space-x-2 md:space-x-4">
+      <div className="-mt-16 flex items-center space-x-2 md:space-x-4">
         <AuthNavLink href={routes.auth.signIn4}>
           <PiArrowLineRight className="h-4 w-4" />
           <span>Login</span>

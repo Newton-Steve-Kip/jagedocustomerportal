@@ -29,10 +29,16 @@ export const routes = {
 
   customers: {
     dashboard: '/customers',
+    requisitions: '/customers/requisitions',
+    viewRequisition: '/customers/requisitions/view-requisition',
     generateInvoice: '/customers/generate-invoice',
     invoice: '/customers/invoice',
-    jobs: '/customers/jobs',
-    viewRequisition: '/customers/requisitions/view-requisition',
+
+    //jobs
+    active: '/customers/jobs/active-job',
+    activeJobDetails: '/customers/jobs/active-job-details',
+    ongoing: '/customers/ongoing',
+    complete: '/customers/jobs/completed-jobs',
   },
 
   eCommerce: {

@@ -53,11 +53,20 @@ import {
   PiProjectorScreenChart,
 } from 'react-icons/pi';
 
+interface MenuItem {
+  name: string;
+  href: string;
+  icon?: React.ReactNode;
+  badge?: string;
+  dropdownItems?: MenuItem[];
+}
+
 // Note: do not add href in the label object, it is rendering as label
-export const menuItems = [
+export const menuItems: MenuItem[] = [
   // label start
   {
     name: 'Jagedo',
+    href: '#',
   },
   //label end
   {
@@ -158,6 +167,7 @@ export const menuItems = [
 
   {
     name: 'Settings',
+    href: '#',
   },
   // // label end
   {

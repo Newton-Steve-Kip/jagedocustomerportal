@@ -10,35 +10,12 @@ const invoiceItems = [
   {
     id: '1',
     product: {
-      title: 'ChawkBazar Laravel Flutter Mobile App',
-      description:
-        'Along With Wordpress Themes & Plugins, We always try to use latest trending techs like React, Next Js, Gatsby Js, GraphQl, Shopify etc to make our products special.',
+      title: 'Repair of faulty wiring system',
+      description: '',
     },
     quantity: 2,
     unitPrice: 100,
     total: 200,
-  },
-  {
-    id: '2',
-    product: {
-      title: 'Borobazar React Next Grocery Template',
-      description:
-        'Our rich tech choice will help you to build high performance applications. We are also known to provide great customer supports to our customers.',
-    },
-    quantity: 2,
-    unitPrice: 100,
-    total: 200,
-  },
-  {
-    id: '3',
-    product: {
-      title: 'Superprops React Modern Landing Page Template',
-      description:
-        'Our rich tech choice will help you to build high performance applications. We are also known to provide great customer supports to our customers.',
-    },
-    quantity: 3,
-    unitPrice: 100,
-    total: 300,
   },
 ];
 
@@ -50,7 +27,7 @@ const columns = [
     width: 50,
   },
   {
-    title: 'Item',
+    title: 'Description',
     dataIndex: 'product',
     key: 'product',
     width: 250,
@@ -68,20 +45,6 @@ const columns = [
       </>
     ),
   },
-
-  {
-    title: 'Quantity',
-    dataIndex: 'quantity',
-    key: 'quantity',
-    width: 200,
-  },
-  {
-    title: 'Unit Price',
-    dataIndex: 'unitPrice',
-    key: 'unitPrice',
-    width: 200,
-    render: (value: string) => <Text className="font-medium">${value}</Text>,
-  },
   {
     title: 'Total',
     dataIndex: 'total',
@@ -98,7 +61,7 @@ function InvoiceDetailsListTable() {
       columns={columns}
       variant="minimal"
       rowKey={(record) => record.id}
-      scroll={{ x: 660 }}
+      scroll={{ x: 400 }}
       className="mb-11"
     />
   );
@@ -108,12 +71,14 @@ export default function InvoiceDetails() {
   return (
     <div className="w-full rounded-xl border border-muted p-5 text-sm sm:p-6 lg:p-8 2xl:p-10">
       <div className="mb-12 flex flex-col-reverse items-start justify-between md:mb-16 md:flex-row">
-        <Image
-          src={siteConfig.logo}
-          alt={siteConfig.title}
-          className="dark:invert"
-          priority
-        />
+        <div className="h-25 w-20">
+          <Image
+            src={siteConfig.logo}
+            alt={siteConfig.title}
+            className="dark:invert"
+            priority
+          />
+        </div>
         <div className="mb-4 md:mb-0">
           <Badge
             variant="flat"
@@ -128,45 +93,28 @@ export default function InvoiceDetails() {
         </div>
       </div>
 
-      <div className="mb-12 grid gap-4 xs:grid-cols-2 sm:grid-cols-3 sm:grid-rows-1">
+      <div className="mb-6 grid gap-4 xs:grid-cols-2 sm:grid-cols-3 sm:grid-rows-1">
         <div className="">
-          <Title as="h6" className="mb-3.5 font-semibold">
-            From
-          </Title>
-          <Text className="mb-1.5 text-sm font-semibold uppercase">
-            REDQ, INC
-          </Text>
-          <Text className="mb-1.5">Jerome Bell</Text>
-          <Text className="mb-1.5">
-            4140 Parker Rd. Allentown, <br /> New Mexico 31134
-          </Text>
-          <Text className="mb-4 sm:mb-6 md:mb-8">(302) 555-0107</Text>
           <div>
-            <Text className="mb-2 text-sm font-semibold">Creation Date</Text>
+            <Text className=" text-sm font-semibold">Invoice Date</Text>
+            <Text className="mb-2">Mar 22, 2013</Text>
+          </div>
+          <div>
+            <Text className="text-sm font-semibold">Due Date</Text>
             <Text>Mar 22, 2013</Text>
           </div>
         </div>
 
-        <div className="mt-4 xs:mt-0">
+        <div className="mt-2 xs:mt-0">
           <Title as="h6" className="mb-3.5 font-semibold">
-            Bill To
+            Invoice To
           </Title>
-          <Text className="mb-1.5 text-sm font-semibold uppercase">
-            TRANSPORT LLC
-          </Text>
-          <Text className="mb-1.5">Albert Flores</Text>
-          <Text className="mb-1.5">
-            2715 Ash Dr. San Jose, <br />
-            South Dakota 83475
-          </Text>
-          <Text className="mb-4 sm:mb-6 md:mb-8">(671) 555-0110</Text>
-          <div>
-            <Text className="mb-2 text-sm font-semibold">Due Date</Text>
-            <Text>Mar 22, 2013</Text>
-          </div>
+
+          <Text className="mb-1.5">Hassan Rajab</Text>
+          <Text className="mb-1.5">Nairobi,Kenya</Text>
         </div>
 
-        <div className="mt-4 flex sm:mt-6 md:mt-0 md:justify-end">
+        <div className=" flex sm:mt-2 md:mt-0 md:justify-end">
           <QRCodeSVG
             value="https://reactjs.org/"
             className="h-28 w-28 lg:h-32 lg:w-32"
@@ -176,8 +124,8 @@ export default function InvoiceDetails() {
 
       <InvoiceDetailsListTable />
 
-      <div className="flex flex-col-reverse items-start justify-between border-t border-muted pb-4 pt-8 xs:flex-row">
-        <div className="mt-6 max-w-md pe-4 xs:mt-0">
+      <div className="flex flex-col-reverse items-start justify-between border-t border-muted pb-2 pt-4 xs:flex-row">
+        <div className="mt-2 max-w-md pe-4 xs:mt-0">
           <Title
             as="h6"
             className="mb-1 text-xs font-semibold uppercase xs:mb-2 xs:text-sm"
@@ -190,32 +138,21 @@ export default function InvoiceDetails() {
           </Text>
         </div>
         <div className=" w-full max-w-sm">
-          <Text className="flex items-center justify-between border-b border-muted pb-3.5 lg:pb-5">
+          <Text className="flex items-center justify-between border-b border-muted  lg:pb-5">
             Subtotal:{' '}
             <Text as="span" className="font-semibold">
-              $700
+              200
             </Text>
           </Text>
-          <Text className="flex items-center justify-between border-b border-muted py-3.5 lg:py-5">
-            Shipping:{' '}
-            <Text as="span" className="font-semibold">
-              $142
-            </Text>
-          </Text>
-          <Text className="flex items-center justify-between border-b border-muted py-3.5 lg:py-5">
-            Discount:{' '}
-            <Text as="span" className="font-semibold">
-              $250
-            </Text>
-          </Text>
-          <Text className="flex items-center justify-between border-b border-muted py-3.5 lg:py-5">
+
+          <Text className="flex items-center justify-between border-b border-muted  lg:py-5">
             Taxes:
             <Text as="span" className="font-semibold">
-              15%
+              16% VAT
             </Text>
           </Text>
-          <Text className="flex items-center justify-between pt-4 text-base font-semibold text-gray-900 lg:pt-5">
-            Total: <Text as="span">$659.5</Text>
+          <Text className="flex items-center justify-between  text-base font-semibold text-gray-900 lg:pt-5">
+            Total: <Text as="span">232</Text>
           </Text>
         </div>
       </div>

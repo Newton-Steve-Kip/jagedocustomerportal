@@ -1,9 +1,16 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import './styles.css';
+import { routes } from '@/config/routes';
+import { DUMMY_ID } from '@/config/constants';
 
-const CreateForm: React.FC = () => {
+const GenerateInvoice: React.FC = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const metric = searchParams.get('metric') || '';
+
   const [description, setDescription] = useState('');
   const [emergency, setEmergency] = useState('');
   const [date, setDate] = useState('');
@@ -28,10 +35,13 @@ const CreateForm: React.FC = () => {
       location,
       file,
     });
+
+    router.push(routes.invoice.details(DUMMY_ID));
   };
 
   return (
     <div className="container mx-auto p-4">
+      <h1>{metric}</h1>
       <div className="w-full rounded-lg bg-white p-6 shadow-md">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -214,4 +224,4 @@ const CreateForm: React.FC = () => {
   );
 };
 
-export default CreateForm;
+export default GenerateInvoice;

@@ -6,6 +6,7 @@ import SummaryWidgetCustomers from './summaryCustomer';
 import StatusCard from './status-card';
 import WalletCard from './wallet';
 import PendingInvoiceCard from './pendinginvoice';
+import JobSlider from '../../customers/requisitions/cards/job-slider';
 
 export default function AdminDashboard() {
   const items = [
@@ -33,21 +34,25 @@ export default function AdminDashboard() {
   return (
     <div className="@container">
       <div className="grid grid-cols-1 gap-4 @4xl:grid-cols-2 @7xl:grid-cols-12 3xl:gap-8">
-
         <SpType className="py-5 @2xl:grid-cols-3  @3xl:gap-6 @4xl:col-span-2 @4xl:grid-cols-4 @7xl:col-span-8" />
-        <SummaryWidgetCustomers className="h-[150px] @sm:h-[320px] @7xl:col-span-4 @7xl:col-start-9 @7xl:row-start-1 @7xl:row-end-3 @7xl:h-full" />
+        <JobSlider className="h-[300px] @sm:h-[320px]   @7xl:col-span-4 @7xl:col-start-auto @7xl:row-start-auto" />
+
         <StatusCard
           className="h-[150px] @sm:h-[320px] @4xl:col-start-2 @7xl:col-span-4 @7xl:col-start-auto @7xl:row-start-auto"
           title="Status Updates"
           items={items}
-          seeAllText="See All"/>
-        <WalletCard className="h-[150px] @sm:h-[320px] @7xl:col-span-4 @7xl:col-start-9 @7xl:row-start-1 @7xl:row-end-3 @7xl:h-full" balance={balance} />
+          seeAllText="See All"
+        />
+        <WalletCard
+          className="h-[150px] @sm:h-[320px] @7xl:col-span-4 @7xl:col-start-9 @7xl:row-start-1 @7xl:row-end-3 @7xl:h-full"
+          balance={balance}
+        />
         <PendingInvoiceCard
           className="h-[150px] @sm:h-[320px] @4xl:col-start-2 @7xl:col-span-4 @7xl:col-start-auto @7xl:row-start-auto"
           invoiceId={invoiceId}
           amount={amount}
           dueDate={dueDate}
-          />
+        />
       </div>
     </div>
   );
