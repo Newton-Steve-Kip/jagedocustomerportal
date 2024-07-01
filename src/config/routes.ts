@@ -113,6 +113,7 @@ export const routes = {
   },
   eventCalendar: '/event-calendar',
   rolesPermissions: '/roles-permissions',
+
   invoice: {
     home: '/invoice',
     create: '/invoice/create',
@@ -157,6 +158,7 @@ export const routes = {
   maintenance: '/maintenance',
   blank: '/blank',
   auth: {
+    signup: '/signup',
     signUp4: '/auth/sign-up-4',
     // sign in
     signIn1: '/auth/sign-in-1',

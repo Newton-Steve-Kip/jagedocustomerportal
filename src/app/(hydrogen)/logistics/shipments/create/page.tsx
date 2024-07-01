@@ -1,7 +1,7 @@
 import { routes } from '@/config/routes';
-import PageHeader from '@/app/shared/page-header';
+import PageHeader from '@/app/shared/commons/page-header';
 import { metaObject } from '@/config/site.config';
-import ImportButton from '@/app/shared/import-button';
+import ImportButton from '@/app/shared/commons/import-button';
 import CreateEditShipment from '@/app/shared/logistics/shipment/create-edit';
 
 export const metadata = {

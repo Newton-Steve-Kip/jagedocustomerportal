@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { routes } from '@/config/routes';
 import { metaObject } from '@/config/site.config';
-import PageHeader from '@/app/shared/page-header';
-import ImportButton from '@/app/shared/import-button';
+import PageHeader from '@/app/shared/commons/page-header';
+import ImportButton from '@/app/shared/commons/import-button';
 import CreateEditShipment from '@/app/shared/logistics/shipment/create-edit';
 import { shipmentData } from '@/app/shared/logistics/shipment/create-edit/form-utils';
 

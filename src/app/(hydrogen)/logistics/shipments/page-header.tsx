@@ -3,8 +3,8 @@ import { PiPlusBold } from 'react-icons/pi';
 import { routes } from '@/config/routes';
 import { Button } from 'rizzui';
 import { shipmentData } from '@/data/shipment-data';
-import PageHeader from '@/app/shared/page-header';
-import ExportButton from '@/app/shared/export-button';
+import PageHeader from '@/app/shared/commons/page-header';
+import ExportButton from '@/app/shared/commons/export-button';
 
 const pageHeader = {
   title: 'All Shipments',
