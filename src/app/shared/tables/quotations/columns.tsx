@@ -151,7 +151,7 @@ export const getColumns = ({
             aria-label={'View'}
             className="hover:!border-gray-900 hover:text-gray-700"
           >
-            <Link href={routes.customers.activeJobDetails}>
+            <Link href={routes.customers.quotationReports}>
               <EyeIcon className="h-4 w-4" />
             </Link>
           </ActionIcon>

@@ -28,7 +28,7 @@ const data = [
     name: 'Quotations',
     total: 7,
     fill: '#FFD66B',
-    link: routes.admin.quotations,
+    link: routes.customers.quotations,
   },
   {
     name: 'Active Jobs',
@@ -36,12 +36,7 @@ const data = [
     fill: '#04364A',
     link: routes.customers.active,
   },
-  {
-    name: 'Ongoing',
-    total: 11,
-    fill: '#176B87',
-    link: routes.customers.ongoing,
-  },
+
   {
     name: 'Completed',
     total: 13,

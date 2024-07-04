@@ -32,6 +32,8 @@ export const routes = {
     requisitions: '/customers/requisitions',
     viewRequisition: '/customers/requisitions/view-requisition',
     generateInvoice: '/customers/generate-invoice',
+    quotations: '/customers/quotations',
+    quotationReports: '/customers/quotations/quotation-reports',
     invoice: '/customers/invoice',
 
     //jobs

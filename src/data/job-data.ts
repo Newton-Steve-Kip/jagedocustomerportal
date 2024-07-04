@@ -31,6 +31,31 @@ export const jobData = [
   },
 ];
 
+export const quotationReportData = [
+  {
+    id: '3233',
+    item: 1,
+    date: '2022-11-10T06:22:01.621Z',
+    name: 'Kennedy',
+    phone: '0782345678',
+    email: 'steve@gmail.com',
+    gender: 'Male',
+    level: '7',
+    rating: '7',
+  },
+  {
+    id: '3353',
+    item: 2,
+    date: '2022-11-10T06:22:01.621Z',
+    name: 'Paul',
+    phone: '0712345678',
+    email: 'sha@gmail.com',
+    gender: 'Female',
+    level: 9,
+    rating: 8,
+  },
+];
+
 export const requisitions = [
   {
     id: '3416',

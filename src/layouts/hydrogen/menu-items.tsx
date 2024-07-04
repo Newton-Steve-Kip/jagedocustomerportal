@@ -51,6 +51,7 @@ import {
   PiStorefront,
   PiStar,
   PiProjectorScreenChart,
+  PiTrolleyDuotone,
 } from 'react-icons/pi';
 
 interface MenuItem {
@@ -123,10 +124,10 @@ export const menuItems: MenuItem[] = [
     icon: <PiHardHat />,
   },
   {
-    name: 'Shop Now',
+    name: 'Shop App',
     href: routes.admin.serviceProvider,
     badge: '',
-    icon: <PiStorefront />,
+    icon: <PiTrolleyDuotone />,
   },
 
   {
